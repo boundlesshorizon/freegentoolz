@@ -215,6 +215,82 @@ Respond STRICTLY in JSON format with the following schema:
   }
 });
 
+// 4. AI Startup Generator endpoint
+app.post("/api/startup/generate", async (req, res) => {
+  const { description, preferredTld } = req.body;
+  if (!description) {
+    return res.status(400).json({ error: "Description or niche keyword is required." });
+  }
+
+  try {
+    const ai = getGemini();
+    const prompt = `You are a legendary tech-incubator partner, startup naming specialist, and marketing strategist.
+Take this startup concept or keyword niche: "${description}"
+Preferred Domain TLD: "${preferredTld || "Any (.com, .io, .ai)"}"
+
+Generate exactly 5 highly unique, catchy, memorable startup business names. Each startup name must correspond to a highly creative domain name using the preferred TLD. 
+Also provide a professional tagline, value proposition statement, target audience definition, and professional visual brand color recommendation for each.
+Finally, write a 2-sentence market context overview for the specified space.
+
+Respond STRICTLY in JSON format with the following schema:
+{
+  "ideas": [
+    {
+      "name": "Startup Name",
+      "domain": "domain.com",
+      "tagline": "Catchy tagline or slogan",
+      "valueProp": "A compelling 1-sentence value proposition explaining why it excels.",
+      "audience": "Specific defined target demographic.",
+      "brandColors": "Description of the visual color theme (e.g. Deep charcoal with electric copper accents)."
+    },
+    ...
+  ],
+  "marketContext": "2-sentence professional analysis of market opportunity and trend vectors."
+}`;
+
+    const response = await ai.models.generateContent({
+      model: "gemini-3.5-flash",
+      contents: prompt,
+      config: {
+        responseMimeType: "application/json",
+        responseSchema: {
+          type: Type.OBJECT,
+          required: ["ideas", "marketContext"],
+          properties: {
+            ideas: {
+              type: Type.ARRAY,
+              description: "Array of exactly 5 creative startup brand concepts.",
+              items: {
+                type: Type.OBJECT,
+                required: ["name", "domain", "tagline", "valueProp", "audience", "brandColors"],
+                properties: {
+                  name: { type: Type.STRING },
+                  domain: { type: Type.STRING },
+                  tagline: { type: Type.STRING },
+                  valueProp: { type: Type.STRING },
+                  audience: { type: Type.STRING },
+                  brandColors: { type: Type.STRING }
+                }
+              }
+            },
+            marketContext: {
+              type: Type.STRING,
+              description: "2-sentence expert market opportunity analysis summary."
+            }
+          }
+        }
+      }
+    });
+
+    const resultText = response.text || "{}";
+    const data = JSON.parse(resultText.trim());
+    return res.json(data);
+  } catch (error: any) {
+    console.error("Startup Generator Error:", error);
+    return res.status(500).json({ error: error.message || "Failed to generate brand concepts." });
+  }
+});
+
 // Setup Vite dev server or static distribution directories
 async function startServer() {
   if (process.env.NODE_ENV !== "production") {

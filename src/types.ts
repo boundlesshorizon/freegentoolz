@@ -1,4 +1,4 @@
-export type ViewType = 'home' | 'lotto' | 'fancytext' | 'qrblender' | 'symbols' | 'seo' | 'case' | 'bmi';
+export type ViewType = 'home' | 'lotto' | 'fancytext' | 'qrblender' | 'symbols' | 'seo' | 'case' | 'bmi' | 'startup' | 'soundscape';
 
 export interface LottoResult {
   combinations: string[][];
@@ -28,3 +28,18 @@ export interface ThemePreset {
   to: string;
   accent: string;
 }
+
+export interface StartupIdea {
+  name: string;
+  domain: string;
+  tagline: string;
+  valueProp: string;
+  audience: string;
+  brandColors: string;
+}
+
+export interface StartupResult {
+  ideas: StartupIdea[];
+  marketContext: string;
+}
+

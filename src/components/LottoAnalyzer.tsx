@@ -2,11 +2,24 @@ import React, { useState } from 'react';
 import { Dices, Activity, ChevronRight, ArrowLeft, Sparkles, Copy, RefreshCw, Layers } from 'lucide-react';
 import { LottoResult } from '../types';
 
-const LOTTO_DATABASES = {
-  USA: ['Powerball (5/69 + 1/26)', 'Mega Millions (5/70 + 1/25)'],
-  Canada: ['Lotto Max (7/50)', 'Lotto 6/49 (6/49)'],
-  Australia: ['Oz Lotto (7/47)', 'Powerball (7/35 + 1/20)'],
-  Philippines: ['PCSO Ultra 6/58', 'PCSO Grand 6/55', 'PCSO Super 6/49']
+const LOTTO_DATABASES: Record<string, string[]> = {
+  "United States (USA)": ['Powerball (5/69 + 1/26)', 'Mega Millions (5/70 + 1/25)', 'Cash4Life (5/60 + 1/4)'],
+  "Canada": ['Lotto Max (7/50)', 'Lotto 6/49 (6/49)', 'Daily Grand (5/49 + 1/7)'],
+  "United Kingdom": ['UK National Lotto (6/59)', 'Thunderball (5/39 + 1/14)', 'EuroMillions UK (5/50 + 2/12)'],
+  "Europe (Multi-Region)": ['EuroMillions (5/50 + 2/12)', 'EuroJackpot (5/50 + 2/12)', 'Vikinglotto (6/48 + 1/8)'],
+  "Australia": ['Oz Lotto (7/47)', 'Powerball AU (7/35 + 1/20)', 'Saturday Lotto (6/45)'],
+  "Philippines": ['PCSO Ultra Lotto 6/58', 'PCSO Grand Lotto 6/55', 'PCSO Super Lotto 6/49', 'PCSO Mega Lotto 6/45', 'PCSO Lotto 6/42'],
+  "Japan": ['Loto 6 (6/43)', 'Loto 7 (7/37)', 'Mini Loto (5/31)'],
+  "South Korea": ['Lotto 6/45 (6/45)'],
+  "Singapore": ['Singapore Toto (6/49)'],
+  "Germany": ['LOTTO 6aus49 (6/49 + 1/9)'],
+  "France": ['French Loto (5/49 + 1/10)'],
+  "Italy": ['SuperEnalotto (6/90)'],
+  "Spain": ['La Primitiva (6/49)', 'El Gordo (5/54 + 1/9)', 'Bonoloto (6/49)'],
+  "Brazil": ['Mega-Sena (6/60)', 'Quina (5/80)', 'Dupla Sena (6/50)'],
+  "South Africa": ['SA Powerball (5/50 + 1/20)', 'SA Lotto (6/52)', 'Daily Lotto (5/36)'],
+  "New Zealand": ['NZ Powerball (6/40 + 1/10)', 'NZ Lotto (6/40)'],
+  "Ireland": ['Irish Lotto (6/47)', 'Daily Million (6/39)']
 };
 
 interface LottoAnalyzerProps {
@@ -14,8 +27,8 @@ interface LottoAnalyzerProps {
 }
 
 export default function LottoAnalyzer({ onBack }: LottoAnalyzerProps) {
-  const [country, setCountry] = useState<keyof typeof LOTTO_DATABASES>('USA');
-  const [game, setGame] = useState(LOTTO_DATABASES['USA'][0]);
+  const [country, setCountry] = useState<string>('United States (USA)');
+  const [game, setGame] = useState(LOTTO_DATABASES['United States (USA)'][0]);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [results, setResults] = useState<LottoResult | null>(null);
   const [errorMessage, setErrorMessage] = useState('');
@@ -87,7 +100,7 @@ export default function LottoAnalyzer({ onBack }: LottoAnalyzerProps) {
                 className="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-white focus:ring-2 focus:ring-emerald-500 outline-none transition-all"
                 value={country}
                 onChange={(e) => {
-                  const val = e.target.value as keyof typeof LOTTO_DATABASES;
+                  const val = e.target.value;
                   setCountry(val);
                   setGame(LOTTO_DATABASES[val][0]);
                 }}

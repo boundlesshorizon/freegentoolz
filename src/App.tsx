@@ -13,7 +13,9 @@ import {
   Sparkles,
   Zap,
   Star,
-  ExternalLink
+  ExternalLink,
+  Globe,
+  Moon
 } from 'lucide-react';
 
 import { ViewType } from './types';
@@ -24,6 +26,8 @@ import SymbolsCopier from './components/SymbolsCopier';
 import SeoWordCounter from './components/SeoWordCounter';
 import CaseConverter from './components/CaseConverter';
 import BmiCalculator from './components/BmiCalculator';
+import StartupDomainGenerator from './components/StartupDomainGenerator';
+import FocusSoundscape from './components/FocusSoundscape';
 
 export default function App() {
   const [activeView, setActiveView] = useState<ViewType>('home');
@@ -69,32 +73,6 @@ export default function App() {
 
       {/* Main Core Layout */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
-        {/* Premium Sponsor Ad Slot */}
-        <div className="w-full bg-slate-900/50 border border-slate-900/80 rounded-2xl p-4 sm:p-6 mb-8 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
-          <div className="flex items-start gap-3.5 text-center md:text-left">
-            <div className="p-2.5 bg-emerald-500/10 rounded-xl text-emerald-450 hidden sm:block">
-              <Sparkles className="w-5 h-5 animate-pulse text-emerald-400" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2 justify-center md:justify-start">
-                <span className="text-[9px] uppercase font-bold tracking-widest bg-slate-800 text-emerald-400 px-2 py-0.5 rounded font-mono">Sponsored</span>
-                <h4 className="text-xs font-bold text-white tracking-wide">Accelerate Creative Copy & Code with Google AI Studio</h4>
-              </div>
-              <p className="text-xs text-slate-400 mt-1 max-w-xl leading-relaxed">
-                Connect your workspace directly to Google Gemini models to unlock automated copywriting, predictive lotto statistics, and customized branding.
-              </p>
-            </div>
-          </div>
-          <a 
-            href="https://ai.studio/build" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="w-full md:w-auto bg-slate-800 hover:bg-slate-750 text-white font-bold py-2.5 px-5 rounded-xl text-xs flex items-center justify-center gap-1 transition-colors border border-slate-700/50"
-          >
-            Launch Prototype <ChevronRight className="w-3.5 h-3.5" />
-          </a>
-        </div>
 
         {/* Dynamic Route Switching */}
         <div id="content-view-container">
@@ -120,7 +98,7 @@ export default function App() {
                   <Wand2 className="w-5 h-5 text-emerald-400" /> Premium AI Tool Suites
                 </h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                   
                   {/* Lotto AI Card */}
                   <div 
@@ -139,9 +117,9 @@ export default function App() {
                         </span>
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Global Lotto AI Analyzer</h3>
-                        <p className="text-xs text-slate-400 leading-relaxed">
-                          Analyze past draws for USA, Canada, Australia, and Philippines. Extract frequency distribution formulas and custom bell curve combinations.
+                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Global Lotto AI</h3>
+                        <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                          Analyze past draws for USA, Canada, UK, Europe, Philippines, Japan and 10+ regions. Synthesize bell curves.
                         </p>
                       </div>
                       <div className="flex items-center text-emerald-404 text-xs font-semibold pt-2 text-emerald-400 group-hover:translate-x-1.5 transition-transform">
@@ -168,8 +146,8 @@ export default function App() {
                       </div>
                       <div>
                         <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Brand & Text Stylist</h3>
-                        <p className="text-xs text-slate-400 leading-relaxed">
-                          Convert raw string tags into 200+ Unicode styles and formulate viral social platform hook descriptions powered by server-side Gemini.
+                        <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                          Convert raw string tags into 200+ Unicode variations and formulate high-converting viral hooks powered by Gemini.
                         </p>
                       </div>
                       <div className="flex items-center text-cyan-404 text-xs font-semibold pt-2 text-cyan-405 group-hover:translate-x-1.5 transition-transform text-cyan-400">
@@ -196,12 +174,40 @@ export default function App() {
                       </div>
                       <div>
                         <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">AI Smart QR Blender</h3>
-                        <p className="text-xs text-slate-400 leading-relaxed">
-                          Standard boring black QRs are inoperable. Render beautiful high-contrast aesthetic QR canvas codes designed with themes matching target prompts.
+                        <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                          Render gorgeous high-contrast custom brand QR codes structured with custom design themes from prompts.
                         </p>
                       </div>
                       <div className="flex items-center text-purple-404 text-xs font-semibold pt-2 text-purple-405 group-hover:translate-x-1.5 transition-transform text-purple-400">
                         Generate Code <ChevronRight className="w-3.5 h-3.5 ml-1" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Startup & Domain Generator Card */}
+                  <div 
+                    id="card-startup"
+                    onClick={() => setActiveView('startup')} 
+                    className="group relative bg-slate-900 border border-slate-900 hover:border-emerald-500/40 p-6 rounded-3xl cursor-pointer transition-all overflow-hidden shadow-sm"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="relative z-10 space-y-4">
+                      <div className="flex justify-between items-start">
+                        <div className="p-3 bg-emerald-500/10 rounded-2xl text-emerald-400 transition-colors group-hover:bg-emerald-500/20 w-fit">
+                          <Globe className="w-8 h-8" />
+                        </div>
+                        <span className="text-[9px] font-bold uppercase tracking-wider bg-emerald-550/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded font-mono">
+                          Gemini 3.5
+                        </span>
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Startup & Domain AI</h3>
+                        <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                          Assemble 5 catchy venture brand concepts, matching premium TLD domain name recommendations, and taglines.
+                        </p>
+                      </div>
+                      <div className="flex items-center text-emerald-404 text-xs font-semibold pt-2 text-emerald-400 group-hover:translate-x-1.5 transition-transform">
+                        Launch Ideas <ChevronRight className="w-3.5 h-3.5 ml-1" />
                       </div>
                     </div>
                   </div>
@@ -218,7 +224,7 @@ export default function App() {
                   <span className="text-xs text-slate-600 font-mono">No subscription required</span>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
                   
                   {/* Symbols Copier */}
                   <div 
@@ -280,6 +286,21 @@ export default function App() {
                     </div>
                   </div>
 
+                  {/* Focus Soundscape */}
+                  <div 
+                    id="tile-soundscape"
+                    onClick={() => setActiveView('soundscape')}
+                    className="p-5 bg-slate-900/55 hover:bg-slate-900 border border-slate-900 hover:border-slate-800 rounded-2xl transition hover:shadow-sm cursor-pointer flex flex-col justify-between min-h-[140px] group"
+                  >
+                    <div className="p-2.5 bg-slate-950 rounded-xl text-slate-450 w-fit border border-slate-850 group-hover:bg-slate-850 transition">
+                      <Moon className="w-5 h-5 text-violet-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-white font-bold text-sm tracking-wide mt-3 group-hover:text-emerald-400 transition">Focus Soundscape</h4>
+                      <p className="text-[11px] text-slate-500 mt-1 lines-clamp-2">Interactive Pomodoro timer with procedural binaural noise mixer.</p>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -293,6 +314,8 @@ export default function App() {
           {activeView === 'seo' && <SeoWordCounter onBack={() => setActiveView('home')} />}
           {activeView === 'case' && <CaseConverter onBack={() => setActiveView('home')} />}
           {activeView === 'bmi' && <BmiCalculator onBack={() => setActiveView('home')} />}
+          {activeView === 'startup' && <StartupDomainGenerator onBack={() => setActiveView('home')} />}
+          {activeView === 'soundscape' && <FocusSoundscape onBack={() => setActiveView('home')} />}
         </div>
       </main>
 
