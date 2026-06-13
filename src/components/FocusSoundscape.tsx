@@ -67,8 +67,8 @@ export default function FocusSoundscape({ onBack }: FocusSoundscapeProps) {
     // Solfeggio Healing & Abundance Frequencies
     { 
       id: 'hz432', 
-      name: '432 Hz - Peace & Comfort', 
-      desc: 'Universal resonance, somatic harmony, and biological restoration', 
+      name: '432 Hz - Deep Peace & Comfort', 
+      desc: 'Universal resonance, somatic harmony, and biological comfort & tranquility', 
       icon: Heart, 
       type: 'solfeggio', 
       active: false, 
@@ -79,75 +79,99 @@ export default function FocusSoundscape({ onBack }: FocusSoundscapeProps) {
     },
     { 
       id: 'hz528', 
-      name: '528 Hz - Abundance & Luck', 
-      desc: 'The miracle vibration for luck, financial attraction, and DNA repair', 
+      name: '528 Hz - Wealth, Luck & Abundance', 
+      desc: 'The miracle vibration for attracting money, financial breakthroughs, DNA repair, and incredible luck', 
       icon: Sparkles, 
       type: 'solfeggio', 
       active: false, 
       volume: 0.3, 
       color: 'text-yellow-400', 
       freq: 528,
-      affirmation: '💰 Abundance, prosperity, and financial luck gravitate to me effortlessly. I make miracle breakthroughs.'
+      affirmation: '💰 Extreme luck, wealth, and limitless financial abundance gravitate to me. I make massive miracle breakthroughs.'
+    },
+    { 
+      id: 'hz396', 
+      name: '396 Hz - Deep Healing & Fear liberation', 
+      desc: 'Somatic restoration, liberating subconscious guilt, releasing worry, and commencing true healing', 
+      icon: Shield, 
+      type: 'solfeggio', 
+      active: false, 
+      volume: 0.3, 
+      color: 'text-amber-450', 
+      freq: 396,
+      affirmation: '🩹 I release all worry, pain, and fear. Deep emotional and physical healing flows through me right now.'
     },
     { 
       id: 'hz417', 
-      name: '417 Hz - Positive energy', 
-      desc: 'Dissolves negative blocks, cleanses bad history, and prompts change', 
-      icon: Shield, 
+      name: '417 Hz - Pure Positivity & New Beginnings', 
+      desc: 'Clears toxic negative energy, dissolves bad history, and commands radiant positive vibe changes', 
+      icon: Sparkle, 
       type: 'solfeggio', 
       active: false, 
       volume: 0.3, 
       color: 'text-orange-400', 
       freq: 417,
-      affirmation: '☀️ All negative blocks are washing away. I align with positive, divine change and unlimited growth.'
+      affirmation: '☀️ All negative blocks are washing away. I am filled with radiant positivity, clean energy, and bright new beginnings.'
+    },
+    { 
+      id: 'hz285', 
+      name: '285 Hz - Cellular Joy & Happiness', 
+      desc: 'Resets the spiritual blueprint, generates pure joy, cells tissue rejuvenation, and happy aura vibes', 
+      icon: Sun, 
+      type: 'solfeggio', 
+      active: false, 
+      volume: 0.3, 
+      color: 'text-rose-450', 
+      freq: 285,
+      affirmation: '🌸 Supreme happiness resides within me. I move through my day lightweight, cheerful, and filled with glowing joy!'
     },
     { 
       id: 'hz963', 
-      name: '963 Hz - Joy & Limitlessness', 
-      desc: 'The crown chakra spark of supreme happiness and crown alignment', 
-      icon: Sun, 
+      name: '963 Hz - Being Limitless & Supreme Joy', 
+      desc: 'Crown chakra catalyst for universal connection, divine spark, and absolute limitless state of mind', 
+      icon: Zap, 
       type: 'solfeggio', 
       active: false, 
       volume: 0.3, 
       color: 'text-fuchsia-400', 
       freq: 963,
-      affirmation: '🌌 My spirit is completely limitless. I unlock boundless joy, supreme happiness, and cosmic potential.'
+      affirmation: '🌌 My energy and spirit are completely limitless. I step into boundless joy, cosmic potential, and glorious abundance.'
     },
     { 
       id: 'hz741', 
-      name: '741 Hz - Headache & Mind Detox', 
-      desc: 'Cleanse electromagnetic worry, loose headache pressure, and find clarity', 
+      name: '741 Hz - Headache Dissolver & Mind Detox', 
+      desc: 'Melts mental tension, dissolves headache pain, and purges electromagnetic overstimulation', 
       icon: Bell, 
       type: 'solfeggio', 
       active: false, 
       volume: 0.3, 
       color: 'text-emerald-400', 
       freq: 741,
-      affirmation: '💎 Headache tension is melting. My mind is detoxified, clear, quiet, and beautifully focused.'
+      affirmation: '💎 All headache pressure and brain tension are melting away. My mind is quiet, detoxified, and crystal clear.'
     },
     { 
       id: 'hz852', 
-      name: '852 Hz - Intuitive Love', 
-      desc: 'Awaken high intuition, emotional comfort, trust, and mental order', 
+      name: '852 Hz - Intuitive Love & Trust', 
+      desc: 'Awakens higher intuition, spiritual order, self-trust, and deep emotional comfort', 
       icon: Compass, 
       type: 'solfeggio', 
       active: false, 
       volume: 0.3, 
       color: 'text-indigo-400', 
       freq: 852,
-      affirmation: '👁️ I trust my strong, quiet inner intuition. I return to absolute emotional safety, comfort, and unconditional love.'
+      affirmation: '👁️ I trust my quiet, strong inner intuition. I reside in perfect emotional comfort, self-love, and complete peace.'
     },
     { 
       id: 'hz144', 
-      name: '144 Hz - Genius & Intelligence', 
-      desc: 'Alpha-Gamma neural tuner for peak smarts, memory retainment, and mental speed', 
+      name: '144 Hz - Genius & Ultimate Intelligence', 
+      desc: 'Alpha-Gamma neural tuner for supreme memory focus, cognitive speed, and smart peak productivity', 
       icon: Brain, 
       type: 'solfeggio', 
       active: false, 
       volume: 0.3, 
       color: 'text-sky-450', 
       freq: 144,
-      affirmation: '🧠 My brain operates at its absolute zenith. I am focused, learning rapidly, and retaining genius skills.'
+      affirmation: '🧠 My brain operates at its ultimate brilliance. I learn rapidly, recall clearly, and execute with genius focus.'
     },
   ]);
 
@@ -307,44 +331,25 @@ export default function FocusSoundscape({ onBack }: FocusSoundscapeProps) {
 
     } else if (channelId.startsWith('hz')) {
       // SPECIALIZED SOLFEGGIO WAVE GENERATOR
-      // Generates a brilliant sound-bowl texture using acoustic beat interference
+      // Generates an ultra-pure, perfectly steady therapeutic sinus sound wave
       const mainFreq = channel.freq || 432;
       
       const wave1 = ctx.createOscillator();
-      const wave2 = ctx.createOscillator();
       const bandFilter = ctx.createBiquadFilter();
 
       wave1.type = 'sine';
       wave1.frequency.setValueAtTime(mainFreq, ctx.currentTime);
 
-      // Detuned wave creates a natural 0.3Hz "beating" therapeutic modulation automatically
-      wave2.type = 'sine';
-      wave2.frequency.setValueAtTime(mainFreq + 0.35, ctx.currentTime);
-
       // Lowpass filter keeps pure fundamentals
       bandFilter.type = 'lowpass';
       bandFilter.frequency.setValueAtTime(mainFreq * 1.5, ctx.currentTime);
 
-      // Create a resonance swell using low frequency oscillator
-      const swellOsc = ctx.createOscillator();
-      swellOsc.type = 'sine';
-      swellOsc.frequency.setValueAtTime(0.08, ctx.currentTime); // Slow 12-second rhythm
-      
-      const swellGain = ctx.createGain();
-      swellGain.gain.setValueAtTime(0.18, ctx.currentTime); // swell volume bounds
-
-      swellOsc.connect(swellGain);
-      swellGain.connect(gainNode.gain);
-
       wave1.connect(bandFilter);
-      wave2.connect(bandFilter);
       bandFilter.connect(gainNode);
 
       wave1.start();
-      wave2.start();
-      swellOsc.start();
 
-      activeNodes.push(wave1, wave2, swellOsc, swellGain, bandFilter);
+      activeNodes.push(wave1, bandFilter);
     }
 
     sourcesRef.current[channelId] = activeNodes;
