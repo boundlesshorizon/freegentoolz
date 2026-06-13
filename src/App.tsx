@@ -98,41 +98,13 @@ export default function App() {
                   <Wand2 className="w-5 h-5 text-emerald-400" /> Premium AI Tool Suites
                 </h2>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                   
-                  {/* Lotto AI Card */}
-                  <div 
-                    id="card-lotto"
-                    onClick={() => setActiveView('lotto')} 
-                    className="group relative bg-slate-900 border border-slate-900 hover:border-emerald-500/40 p-6 rounded-3xl cursor-pointer transition-all overflow-hidden shadow-sm"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className="relative z-10 space-y-4">
-                      <div className="flex justify-between items-start">
-                        <div className="p-3 bg-emerald-500/10 rounded-2xl text-emerald-400 transition-colors group-hover:bg-emerald-500/20 w-fit">
-                          <Dices className="w-8 h-8" />
-                        </div>
-                        <span className="text-[9px] font-bold uppercase tracking-wider bg-emerald-550/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded font-mono">
-                          Gemini 3.5
-                        </span>
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Global Lotto AI</h3>
-                        <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                          Analyze past draws for USA, Canada, UK, Europe, Philippines, Japan and 10+ regions. Synthesize bell curves.
-                        </p>
-                      </div>
-                      <div className="flex items-center text-emerald-404 text-xs font-semibold pt-2 text-emerald-400 group-hover:translate-x-1.5 transition-transform">
-                        Launch Analyzer <ChevronRight className="w-3.5 h-3.5 ml-1" />
-                      </div>
-                    </div>
-                  </div>
-
                   {/* Brand Stylist Card */}
                   <div 
                     id="card-fancytext"
                     onClick={() => setActiveView('fancytext')} 
-                    className="group relative bg-slate-900 border border-slate-900 hover:border-cyan-555/40 p-6 rounded-3xl cursor-pointer transition-all overflow-hidden shadow-sm"
+                    className="group relative bg-slate-900 border border-slate-900 hover:border-cyan-550/40 p-6 rounded-3xl cursor-pointer transition-all overflow-hidden shadow-sm"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="relative z-10 space-y-4">
@@ -140,8 +112,8 @@ export default function App() {
                         <div className="p-3 bg-cyan-500/10 rounded-2xl text-cyan-400 transition-colors group-hover:bg-cyan-500/20 w-fit">
                           <Type className="w-8 h-8" />
                         </div>
-                        <span className="text-[9px] font-bold uppercase tracking-wider bg-cyan-550/10 text-cyan-400 border border-cyan-500/20 px-2 py-0.5 rounded font-mono">
-                          Dynamic 200+
+                        <span className="text-[9px] font-bold uppercase tracking-wider bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 px-2 py-0.5 rounded font-mono">
+                          Unicode 200+
                         </span>
                       </div>
                       <div>
@@ -150,36 +122,8 @@ export default function App() {
                           Convert raw string tags into 200+ Unicode variations and formulate high-converting viral hooks powered by Gemini.
                         </p>
                       </div>
-                      <div className="flex items-center text-cyan-404 text-xs font-semibold pt-2 text-cyan-405 group-hover:translate-x-1.5 transition-transform text-cyan-400">
+                      <div className="flex items-center text-cyan-450 text-xs font-semibold pt-2 text-cyan-400 group-hover:translate-x-1.5 transition-transform">
                         Customize Branding <ChevronRight className="w-3.5 h-3.5 ml-1" />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* QR Blender Card */}
-                  <div 
-                    id="card-qrblender"
-                    onClick={() => setActiveView('qrblender')} 
-                    className="group relative bg-slate-900 border border-slate-900 hover:border-purple-500/40 p-6 rounded-3xl cursor-pointer transition-all overflow-hidden shadow-sm"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className="relative z-10 space-y-4">
-                      <div className="flex justify-between items-start">
-                        <div className="p-3 bg-purple-500/10 rounded-2xl text-purple-400 transition-colors group-hover:bg-purple-500/20 w-fit">
-                          <QrCode className="w-8 h-8" />
-                        </div>
-                        <span className="text-[9px] font-bold uppercase tracking-wider bg-purple-550/10 text-purple-400 border border-purple-500/20 px-2 py-0.5 rounded font-mono">
-                          Creative AI
-                        </span>
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">AI Smart QR Blender</h3>
-                        <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                          Render gorgeous high-contrast custom brand QR codes structured with custom design themes from prompts.
-                        </p>
-                      </div>
-                      <div className="flex items-center text-purple-404 text-xs font-semibold pt-2 text-purple-405 group-hover:translate-x-1.5 transition-transform text-purple-400">
-                        Generate Code <ChevronRight className="w-3.5 h-3.5 ml-1" />
                       </div>
                     </div>
                   </div>
@@ -196,17 +140,17 @@ export default function App() {
                         <div className="p-3 bg-emerald-500/10 rounded-2xl text-emerald-400 transition-colors group-hover:bg-emerald-500/20 w-fit">
                           <Globe className="w-8 h-8" />
                         </div>
-                        <span className="text-[9px] font-bold uppercase tracking-wider bg-emerald-550/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded font-mono">
-                          Gemini 3.5
+                        <span className="text-[9px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded font-mono">
+                          Gemini 3.5 Hybrid
                         </span>
                       </div>
                       <div>
                         <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Startup & Domain AI</h3>
                         <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                          Assemble 5 catchy venture brand concepts, matching premium TLD domain name recommendations, and taglines.
+                          Assemble 5 catchy venture brand concepts, matching premium TLD domain name recommendations, and taglines. Includes auto local fallback backup.
                         </p>
                       </div>
-                      <div className="flex items-center text-emerald-404 text-xs font-semibold pt-2 text-emerald-400 group-hover:translate-x-1.5 transition-transform">
+                      <div className="flex items-center text-emerald-450 text-xs font-semibold pt-2 text-emerald-400 group-hover:translate-x-1.5 transition-transform">
                         Launch Ideas <ChevronRight className="w-3.5 h-3.5 ml-1" />
                       </div>
                     </div>
@@ -221,23 +165,53 @@ export default function App() {
                   <h2 className="text-lg font-bold text-slate-450 uppercase tracking-wider flex items-center gap-2.5">
                     <Activity className="w-5 h-5 text-slate-500" /> Advanced Content Utilities
                   </h2>
-                  <span className="text-xs text-slate-600 font-mono">No subscription required</span>
+                  <span className="text-xs text-slate-650 font-mono text-emerald-400">Zero Server Latency Tools</span>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-5">
                   
+                  {/* Global Lotto Strategy Engine */}
+                  <div 
+                    id="tile-lotto"
+                    onClick={() => setActiveView('lotto')}
+                    className="p-5 bg-slate-900/55 hover:bg-slate-900 border border-slate-900 hover:border-emerald-500/30 rounded-2xl transition hover:shadow-sm cursor-pointer flex flex-col justify-between min-h-[160px] group"
+                  >
+                    <div className="p-2.5 bg-slate-950 rounded-xl text-slate-400 w-fit border border-slate-850 group-hover:bg-slate-850 transition">
+                      <Dices className="w-5 h-5 text-emerald-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-white font-bold text-sm tracking-wide mt-3 group-hover:text-emerald-400 transition">Global Lotto Strategy</h4>
+                      <p className="text-[11px] text-slate-500 mt-1 line-clamp-2">Parity entropy analysis, bell curve summations for US, Canada, EU.</p>
+                    </div>
+                  </div>
+
+                  {/* Custom QR Code Architect */}
+                  <div 
+                    id="tile-qrblender"
+                    onClick={() => setActiveView('qrblender')}
+                    className="p-5 bg-slate-900/55 hover:bg-slate-900 border border-slate-900 hover:border-purple-500/30 rounded-2xl transition hover:shadow-sm cursor-pointer flex flex-col justify-between min-h-[160px] group"
+                  >
+                    <div className="p-2.5 bg-slate-950 rounded-xl text-slate-400 w-fit border border-slate-850 group-hover:bg-slate-850 transition">
+                      <QrCode className="w-5 h-5 text-purple-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-white font-bold text-sm tracking-wide mt-3 group-hover:text-purple-400 transition">Custom QR Architect</h4>
+                      <p className="text-[11px] text-slate-500 mt-1 line-clamp-2">Draw instant gradient cards with glow, overlay logs, custom taglines.</p>
+                    </div>
+                  </div>
+
                   {/* Symbols Copier */}
                   <div 
                     id="tile-symbols"
                     onClick={() => setActiveView('symbols')}
-                    className="p-5 bg-slate-900/55 hover:bg-slate-900 border border-slate-900 hover:border-slate-800 rounded-2xl transition hover:shadow-sm cursor-pointer flex flex-col justify-between min-h-[140px] group"
+                    className="p-5 bg-slate-900/55 hover:bg-slate-900 border border-slate-900 hover:border-slate-800 rounded-2xl transition hover:shadow-sm cursor-pointer flex flex-col justify-between min-h-[160px] group"
                   >
                     <div className="p-2.5 bg-slate-950 rounded-xl text-slate-450 w-fit border border-slate-850 group-hover:bg-slate-850 transition">
                       <Hash className="w-5 h-5 text-slate-400" />
                     </div>
                     <div>
-                      <h4 className="text-white font-bold text-sm tracking-wide mt-3 group-hover:text-emerald-400 transition">Viral Symbol Copier</h4>
-                      <p className="text-[11px] text-slate-500 mt-1 lines-clamp-2">500+ custom emoticons, arrows, shapes, and star boundaries.</p>
+                      <h4 className="text-white font-bold text-sm tracking-wide mt-3 group-hover:text-emerald-450 transition">Viral Symbol Copier</h4>
+                      <p className="text-[11px] text-slate-500 mt-1 line-clamp-2">500+ custom emoticons, arrows, shapes, and star boundaries.</p>
                     </div>
                   </div>
 
@@ -245,14 +219,14 @@ export default function App() {
                   <div 
                     id="tile-seo"
                     onClick={() => setActiveView('seo')}
-                    className="p-5 bg-slate-900/55 hover:bg-slate-900 border border-slate-900 hover:border-slate-800 rounded-2xl transition hover:shadow-sm cursor-pointer flex flex-col justify-between min-h-[140px] group"
+                    className="p-5 bg-slate-900/55 hover:bg-slate-900 border border-slate-900 hover:border-slate-800 rounded-2xl transition hover:shadow-sm cursor-pointer flex flex-col justify-between min-h-[160px] group"
                   >
                     <div className="p-2.5 bg-slate-950 rounded-xl text-slate-450 w-fit border border-slate-850 group-hover:bg-slate-850 transition">
                       <Sigma className="w-5 h-5 text-slate-400" />
                     </div>
                     <div>
-                      <h4 className="text-white font-bold text-sm tracking-wide mt-3 group-hover:text-emerald-400 transition">SEO Word Counter</h4>
-                      <p className="text-[11px] text-slate-500 mt-1 lines-clamp-2">Live frequency density map and text readability audit reports.</p>
+                      <h4 className="text-white font-bold text-sm tracking-wide mt-3 group-hover:text-emerald-450 transition">SEO Word Counter</h4>
+                      <p className="text-[11px] text-slate-500 mt-1 line-clamp-2">Live frequency density map and text readability audit reports.</p>
                     </div>
                   </div>
 
@@ -260,14 +234,14 @@ export default function App() {
                   <div 
                     id="tile-case"
                     onClick={() => setActiveView('case')}
-                    className="p-5 bg-slate-900/55 hover:bg-slate-900 border border-slate-900 hover:border-slate-800 rounded-2xl transition hover:shadow-sm cursor-pointer flex flex-col justify-between min-h-[140px] group"
+                    className="p-5 bg-slate-900/55 hover:bg-slate-900 border border-slate-900 hover:border-slate-800 rounded-2xl transition hover:shadow-sm cursor-pointer flex flex-col justify-between min-h-[160px] group"
                   >
                     <div className="p-2.5 bg-slate-950 rounded-xl text-slate-450 w-fit border border-slate-850 group-hover:bg-slate-850 transition">
                       <CaseSensitive className="w-5 h-5 text-slate-400" />
                     </div>
                     <div>
-                      <h4 className="text-white font-bold text-sm tracking-wide mt-3 group-hover:text-emerald-400 transition">Auto Case Converter</h4>
-                      <p className="text-[11px] text-slate-500 mt-1 lines-clamp-2">Single-click title capitalization, UPPERCASE, and lowercase formats.</p>
+                      <h4 className="text-white font-bold text-sm tracking-wide mt-3 group-hover:text-emerald-450 transition">Auto Case Converter</h4>
+                      <p className="text-[11px] text-slate-500 mt-1 line-clamp-2">Single-click title capitalization, UPPERCASE, and lowercase formats.</p>
                     </div>
                   </div>
 
@@ -275,14 +249,14 @@ export default function App() {
                   <div 
                     id="tile-bmi"
                     onClick={() => setActiveView('bmi')}
-                    className="p-5 bg-slate-900/55 hover:bg-slate-900 border border-slate-900 hover:border-slate-800 rounded-2xl transition hover:shadow-sm cursor-pointer flex flex-col justify-between min-h-[140px] group"
+                    className="p-5 bg-slate-900/55 hover:bg-slate-900 border border-slate-900 hover:border-slate-800 rounded-2xl transition hover:shadow-sm cursor-pointer flex flex-col justify-between min-h-[160px] group"
                   >
                     <div className="p-2.5 bg-slate-950 rounded-xl text-slate-450 w-fit border border-slate-850 group-hover:bg-slate-850 transition">
                       <Activity className="w-5 h-5 text-slate-400" />
                     </div>
                     <div>
-                      <h4 className="text-white font-bold text-sm tracking-wide mt-3 group-hover:text-emerald-400 transition">Smart BMI Calculator</h4>
-                      <p className="text-[11px] text-slate-500 mt-1 lines-clamp-2">Anatomical metabolic computations with physical tracking guidance.</p>
+                      <h4 className="text-white font-bold text-sm tracking-wide mt-3 group-hover:text-emerald-450 transition">Smart BMI Calculator</h4>
+                      <p className="text-[11px] text-slate-500 mt-1 line-clamp-2">Anatomical metabolic computations with physical tracking guidance.</p>
                     </div>
                   </div>
 
@@ -290,14 +264,14 @@ export default function App() {
                   <div 
                     id="tile-soundscape"
                     onClick={() => setActiveView('soundscape')}
-                    className="p-5 bg-slate-900/55 hover:bg-slate-900 border border-slate-900 hover:border-slate-800 rounded-2xl transition hover:shadow-sm cursor-pointer flex flex-col justify-between min-h-[140px] group"
+                    className="p-5 bg-slate-900/55 hover:bg-slate-900 border border-slate-900 hover:border-slate-800 rounded-2xl transition hover:shadow-sm cursor-pointer flex flex-col justify-between min-h-[160px] group"
                   >
-                    <div className="p-2.5 bg-slate-950 rounded-xl text-slate-450 w-fit border border-slate-850 group-hover:bg-slate-850 transition">
+                    <div className="p-2.5 bg-slate-950 rounded-xl text-slate-400 w-fit border border-slate-850 group-hover:bg-slate-850 transition">
                       <Moon className="w-5 h-5 text-violet-400" />
                     </div>
                     <div>
                       <h4 className="text-white font-bold text-sm tracking-wide mt-3 group-hover:text-emerald-400 transition">Focus Soundscape</h4>
-                      <p className="text-[11px] text-slate-500 mt-1 lines-clamp-2">Interactive Pomodoro timer with procedural binaural noise mixer.</p>
+                      <p className="text-[11px] text-slate-500 mt-1 line-clamp-2">Interactive Pomodoro timer with procedural binaural noise mixer.</p>
                     </div>
                   </div>
 
