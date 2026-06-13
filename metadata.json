@@ -1,0 +1,6 @@
+{
+  "name": "FreeGenTools",
+  "description": "Premium multi-utility suite featuring an AI Lotto Analyzer, brand & unicode stylist, social media hooks engine, QR blender, and quick content utilities.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
