@@ -178,13 +178,13 @@ export default function App() {
                           <Type className="w-8 h-8" />
                         </div>
                         <span className="text-[9px] font-bold uppercase tracking-wider bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 px-2 py-0.5 rounded font-mono">
-                          Unicode 200+
+                          Unicode 300+
                         </span>
                       </div>
                       <div>
                         <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Brand & Text Stylist</h3>
                         <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                          Convert raw string tags into 200+ Unicode variations and formulate high-converting viral hooks powered by Gemini.
+                          Convert raw string tags into 300+ Unicode variations and formulate high-converting viral hooks powered by Gemini.
                         </p>
                       </div>
                       <div className="flex items-center text-cyan-450 text-xs font-semibold pt-2 text-cyan-400 group-hover:translate-x-1.5 transition-transform">
