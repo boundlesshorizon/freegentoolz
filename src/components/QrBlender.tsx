@@ -68,7 +68,12 @@ export default function QrBlender({ onBack }: QrBlenderProps) {
         body: JSON.stringify({ url, stylePrompt, colorAccent })
       });
       if (!response.ok) {
-        throw new Error('Creative model is designing elsewhere. Please retry.');
+        let errText = '';
+        try {
+          const errJson = await response.json();
+          errText = errJson.error || errJson.message || '';
+        } catch (_) {}
+        throw new Error(`Creative model is designing elsewhere (Server Error ${response.status}${errText ? ': ' + errText : ''}). Please retry.`);
       }
       const data = await response.json();
       setBlendResult(data);

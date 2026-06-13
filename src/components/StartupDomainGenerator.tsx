@@ -36,7 +36,12 @@ export default function StartupDomainGenerator({ onBack }: StartupDomainGenerato
         body: JSON.stringify({ description, preferredTld })
       });
       if (!response.ok) {
-        throw new Error('Our startup consultants are brainstorming elsewhere. Please retry.');
+        let errText = '';
+        try {
+          const errJson = await response.json();
+          errText = errJson.error || errJson.message || '';
+        } catch (_) {}
+        throw new Error(`Our startup consultants are brainstorming elsewhere (Server Error ${response.status}${errText ? ': ' + errText : ''}). Please retry.`);
       }
       const data = await response.json();
       setResult(data);

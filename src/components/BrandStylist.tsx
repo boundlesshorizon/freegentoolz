@@ -34,7 +34,12 @@ export default function BrandStylist({ onBack }: BrandStylistProps) {
         body: JSON.stringify({ rawText: text })
       });
       if (!response.ok) {
-        throw new Error('Our copywriters are writing elsewhere. Please retry.');
+        let errText = '';
+        try {
+          const errJson = await response.json();
+          errText = errJson.error || errJson.message || '';
+        } catch (_) {}
+        throw new Error(`Our copywriters are writing elsewhere (Server Error ${response.status}${errText ? ': ' + errText : ''}). Please retry.`);
       }
       const data = await response.json();
       setAiAdvice(data);

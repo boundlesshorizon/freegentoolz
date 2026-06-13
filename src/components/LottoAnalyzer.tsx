@@ -44,7 +44,12 @@ export default function LottoAnalyzer({ onBack }: LottoAnalyzerProps) {
         body: JSON.stringify({ country, game })
       });
       if (!response.ok) {
-        throw new Error('Our AI models are temporarily busy. Please try again.');
+        let errText = '';
+        try {
+          const errJson = await response.json();
+          errText = errJson.error || errJson.message || '';
+        } catch (_) {}
+        throw new Error(`Our AI models are temporarily busy (Server Error ${response.status}${errText ? ': ' + errText : ''}). Please try again.`);
       }
       const data = await response.json();
       setResults(data);
