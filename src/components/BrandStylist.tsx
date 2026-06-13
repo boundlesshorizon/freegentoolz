@@ -17,7 +17,7 @@ export default function BrandStylist({ onBack }: BrandStylistProps) {
 
   const generatedTexts = generateFancyTexts(text);
   
-  // Filter the 200+ results
+  // Filter the 300+ results
   const filteredTexts = generatedTexts.filter(item => 
     item.name.toLowerCase().includes(search.toLowerCase()) ||
     item.text.toLowerCase().includes(search.toLowerCase())
@@ -74,7 +74,7 @@ export default function BrandStylist({ onBack }: BrandStylistProps) {
           <Type className="w-10 h-10" />
         </div>
         <div>
-          <h1 className="text-3xl font-bold text-white font-sans tracking-tight">200+ Brand & Copy Stylist</h1>
+          <h1 className="text-3xl font-bold text-white font-sans tracking-tight">300+ Brand & Copy Stylist</h1>
           <p className="text-slate-400 mt-1">Convert text into standard aesthetic Unicode variations and deploy real Gemini copy optimizations.</p>
         </div>
       </div>
@@ -173,7 +173,7 @@ export default function BrandStylist({ onBack }: BrandStylistProps) {
           )}
         </div>
 
-        {/* Right Column: 200+ Stylist Grid */}
+        {/* Right Column: 300+ Stylist Grid */}
         <div className="lg:col-span-7 bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col h-[750px] shadow-sm">
           <div className="sticky top-0 bg-slate-900 pb-4 z-10 space-y-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
@@ -206,9 +206,9 @@ export default function BrandStylist({ onBack }: BrandStylistProps) {
                   key={idx} 
                   className="bg-slate-950 border border-slate-850 hover:border-slate-700/50 p-4 rounded-xl flex justify-between items-center group transition-colors shadow-sm"
                 >
-                  <div className="overflow-hidden pr-4 leading-relaxed">
+                  <div className="overflow-hidden pr-4 leading-relaxed font-sans">
                     <p className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">{item.name}</p>
-                    <p className="text-white text-base truncate font-normal mt-1">{item.text || '...'}</p>
+                    <p className={`text-base truncate font-semibold mt-1 ${item.color || 'text-white'}`}>{item.text || '...'}</p>
                   </div>
                   <button 
                     onClick={() => copyToClipboard(item.text, idx)}

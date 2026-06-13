@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   Wand2,
   Dices,
-  QrCode,
   Hash,
   Type,
   Sigma,
@@ -25,7 +24,6 @@ import {
 import { ViewType } from './types';
 import LottoAnalyzer from './components/LottoAnalyzer';
 import BrandStylist from './components/BrandStylist';
-import QrBlender from './components/QrBlender';
 import SymbolsCopier from './components/SymbolsCopier';
 import SeoWordCounter from './components/SeoWordCounter';
 import CaseConverter from './components/CaseConverter';
@@ -249,21 +247,6 @@ export default function App() {
                     <div>
                       <h4 className="text-white font-bold text-sm tracking-wide mt-3 group-hover:text-emerald-400 transition">Global Lotto Strategy</h4>
                       <p className="text-[11px] text-slate-500 mt-1 line-clamp-2">Parity entropy analysis, bell curve summations for US, Canada, EU.</p>
-                    </div>
-                  </div>
-
-                  {/* Custom QR Code Architect */}
-                  <div 
-                    id="tile-qrblender"
-                    onClick={() => setActiveView('qrblender')}
-                    className="p-5 bg-slate-900/55 hover:bg-slate-900 border border-slate-900 hover:border-purple-500/30 rounded-2xl transition hover:shadow-sm cursor-pointer flex flex-col justify-between min-h-[160px] group"
-                  >
-                    <div className="p-2.5 bg-slate-950 rounded-xl text-slate-400 w-fit border border-slate-850 group-hover:bg-slate-850 transition">
-                      <QrCode className="w-5 h-5 text-purple-400" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-bold text-sm tracking-wide mt-3 group-hover:text-purple-400 transition">Custom QR Architect</h4>
-                      <p className="text-[11px] text-slate-500 mt-1 line-clamp-2">Draw instant gradient cards with glow, overlay logs, custom taglines.</p>
                     </div>
                   </div>
 
@@ -525,7 +508,6 @@ export default function App() {
           {/* Sub-view Rendering */}
           {activeView === 'lotto' && <LottoAnalyzer onBack={() => setActiveView('home')} />}
           {activeView === 'fancytext' && <BrandStylist onBack={() => setActiveView('home')} />}
-          {activeView === 'qrblender' && <QrBlender onBack={() => setActiveView('home')} />}
           {activeView === 'symbols' && <SymbolsCopier onBack={() => setActiveView('home')} />}
           {activeView === 'seo' && <SeoWordCounter onBack={() => setActiveView('home')} />}
           {activeView === 'case' && <CaseConverter onBack={() => setActiveView('home')} />}

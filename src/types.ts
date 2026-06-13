@@ -1,4 +1,4 @@
-export type ViewType = 'home' | 'lotto' | 'fancytext' | 'qrblender' | 'symbols' | 'seo' | 'case' | 'bmi' | 'startup' | 'soundscape';
+export type ViewType = 'home' | 'lotto' | 'fancytext' | 'symbols' | 'seo' | 'case' | 'bmi' | 'startup' | 'soundscape';
 
 export interface LottoResult {
   combinations: string[][];
